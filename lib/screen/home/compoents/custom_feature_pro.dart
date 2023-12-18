@@ -37,7 +37,8 @@ class CustomFeatureProduct extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
                             color: ShoppingColor().cutomCardColor,
-                            child: Column(
+                            child: 
+                            Column(
                               children: [
                                 Stack(
                                   children: [

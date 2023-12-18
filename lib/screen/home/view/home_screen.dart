@@ -47,6 +47,7 @@ class HomeScreen extends StatelessWidget {
                     text: LocalName.features.tr),
               ),
               CustomFeatureProduct(homeController: homeController),
+              
             ],
           ),
         ));

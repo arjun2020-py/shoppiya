@@ -17,5 +17,5 @@ class CustomImage {
   String category1 = 'assets/images/electronics.png';
   String category2 = 'assets/images/jewellery.png';
   String category3 = 'assets/images/mens.png';
-  String category4 = '';
+  String category4 = 'assets/images/womens.png';
 }
