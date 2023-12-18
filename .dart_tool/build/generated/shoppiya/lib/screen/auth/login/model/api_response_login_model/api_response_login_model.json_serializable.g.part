@@ -1,0 +1,15 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+ApiResponseLoginModel _$ApiResponseLoginModelFromJson(
+        Map<String, dynamic> json) =>
+    ApiResponseLoginModel(
+      token: json['token'] as String?,
+    );
+
+Map<String, dynamic> _$ApiResponseLoginModelToJson(
+        ApiResponseLoginModel instance) =>
+    <String, dynamic>{
+      'token': instance.token,
+    };
