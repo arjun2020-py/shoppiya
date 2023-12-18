@@ -10,4 +10,5 @@ class ShoppingColor {
   Color buttonColor = Color(0xffdf342f);
   Color blackColor = Colors.black;
   Color whiteColor = Colors.white;
+  Color transprentColor = Colors.transparent;
 }

@@ -37,8 +37,7 @@ class HomeController extends GetxController {
 
   final RxList<CatageryModel> categoryList = <CatageryModel>[
     CatageryModel(
-        displayName: LocalName.electronics.tr,
-        targetUrl: CustomImage().category1),
+        displayName: LocalName.electronics.tr, targetUrl: CustomImage().category1),
     CatageryModel(
         displayName: LocalName.jewelery.tr, targetUrl: CustomImage().category2),
     CatageryModel(

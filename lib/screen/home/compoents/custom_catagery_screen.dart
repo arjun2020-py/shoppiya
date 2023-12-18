@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
 import 'package:shoppiya/screen/home/controller/home_controller.dart';
 
 import '../../auth/compoents/custom_text_widget.dart';
+import '../../category_screen/view/sample.dart';
 
 class CustomCatageryScreen extends StatelessWidget {
   const CustomCatageryScreen({
@@ -19,9 +22,9 @@ class CustomCatageryScreen extends StatelessWidget {
       child: Obx(
         () => InkWell(
           onTap: () {
-            
+            Get.to(SampleScreen());
           },
-                  child: ListView.builder(
+          child: ListView.builder(
             scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             itemCount: homeController.categoryList.value.length,
