@@ -15,7 +15,8 @@ class CustomJeweryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return 
+    Card(
       color: ShoppingColor().cutomCardColor,
       child: Column(
         children: [

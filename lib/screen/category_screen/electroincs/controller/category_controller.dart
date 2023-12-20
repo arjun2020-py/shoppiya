@@ -7,6 +7,15 @@ import '../model/electronics_model.dart';
 class CategoryTypeController extends GetxController {
   var electronicsList = RxList<ApiResponsEelectronicsModel>();
   var isLodaing = true.obs;
+  var count = 0.obs;
+
+  addItemCount() {
+    count.value += 1;
+  }
+
+  removeItemCount() {
+    count.value -= 1;
+  }
 
   @override
   void onInit() {

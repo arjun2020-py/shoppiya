@@ -5,8 +5,6 @@ import '../../../../utils/shopping_color/shopping_color.dart';
 import '../../../auth/compoents/custom_text_widget.dart';
 import '../model/electronics_model.dart';
 
-
-
 class CustomCardWidget extends StatelessWidget {
   const CustomCardWidget({
     super.key,
@@ -17,36 +15,28 @@ class CustomCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    Card(
+    return Card(
       color: ShoppingColor().cutomCardColor,
       child: Column(
         children: [
           SizedBox(
-              height:
-                  MediaQuery.sizeOf(context).height *
-                      0.5,
+              height: MediaQuery.sizeOf(context).height * 0.5,
               child: Image.network(
                 data.image,
               )),
           Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 8),
-            child: CustomTextWidget(
-                text: data.title, fontSize: 18),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: CustomTextWidget(text: data.title, fontSize: 18),
           ),
           VerticalSizedBox(10),
           Padding(
             padding: const EdgeInsets.only(right: 260),
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius:
-                      BorderRadius.circular(15)),
+                  color: Colors.green, borderRadius: BorderRadius.circular(15)),
               width: 50,
               child: Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CustomTextWidget(
                     text: data.rating.rate.toString(),
@@ -71,9 +61,7 @@ class CustomCardWidget extends StatelessWidget {
                   Icons.currency_rupee,
                   size: 20,
                 ),
-                CustomTextWidget(
-                    text: data.price.toString(),
-                    fontSize: 15)
+                CustomTextWidget(text: data.price.toString(), fontSize: 15)
               ],
             ),
           ),

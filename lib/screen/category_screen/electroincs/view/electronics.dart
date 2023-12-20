@@ -10,9 +10,11 @@ import '../../../../utils/custom_widget/custom_back_button.dart';
 import '../../../home/model/category_list_model.dart';
 import '../compoents/custom_list_view_widget.dart';
 import '../controller/category_controller.dart';
+import 'electronics_details.dart';
 
 class ElectronicsScreen extends StatelessWidget {
-  ElectronicsScreen({super.key, required this.categoryModel,required this.index});
+  ElectronicsScreen(
+      {super.key, required this.categoryModel, required this.index});
   final RxList<CatageryModel> categoryModel;
   int index;
   final categoryController = Get.put(CategoryTypeController());
@@ -36,9 +38,14 @@ class ElectronicsScreen extends StatelessWidget {
                         itemCount: categoryController.electronicsList.length,
                         itemBuilder: (BuildContext context, int index) {
                           var data = categoryController.electronicsList[index];
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CustomCardWidget(data: data),
+                          return InkWell(
+                            onTap: () {
+                              Get.to(DetailedElectronicsScreen(electronicsController: categoryController,index: index,));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CustomCardWidget(data: data),
+                            ),
                           );
                         },
                       ),
@@ -48,7 +55,3 @@ class ElectronicsScreen extends StatelessWidget {
         ));
   }
 }
-
-
-
-
