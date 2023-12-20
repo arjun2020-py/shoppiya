@@ -14,6 +14,15 @@ class WomensController extends GetxController {
 
   RxList<ApiResponseWomenModel> womensList = <ApiResponseWomenModel>[].obs;
 
+  var count = 0.obs;
+  addItem() {
+    count.value += 1;
+  }
+
+  removeItem() {
+    count.value -= 1;
+  }
+
   void womenApi() async {
     var women = await CategoryTypeServies().womensApi();
 

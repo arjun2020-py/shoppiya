@@ -9,6 +9,7 @@ import '../../../../utils/helper/shopping_helper.dart';
 import '../../../auth/compoents/custom_text_widget.dart';
 import '../compoents/mens_list_view_widget.dart';
 import '../controller/mens_controller.dart';
+import 'deatiled_men_screen.dart';
 
 class MensScreen extends StatelessWidget {
   MensScreen({super.key});
@@ -33,10 +34,17 @@ class MensScreen extends StatelessWidget {
                       itemCount: mensController.mensList.length,
                       itemBuilder: (BuildContext context, int index) {
                         var data = mensController.mensList[index];
-                        return 
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: MensCardListWidget(data: data),
+                        return InkWell(
+                          onTap: () {
+                            Get.to(DetailedMensScreen(
+                              mensController: mensController,
+                              index: index,
+                            ));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: MensCardListWidget(data: data),
+                          ),
                         );
                       },
                     ),
@@ -47,5 +55,3 @@ class MensScreen extends StatelessWidget {
     );
   }
 }
-
- 

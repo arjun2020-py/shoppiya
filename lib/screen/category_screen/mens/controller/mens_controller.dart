@@ -12,6 +12,16 @@ class MensController extends GetxController {
 
   var isLodaing = true.obs;
   RxList<ApiResponseMensModel> mensList = <ApiResponseMensModel>[].obs;
+
+  var count = 0.obs;
+  void addItems() {
+    count.value += 1;
+  }
+
+  void removeItem() {
+    count.value -= 1;
+  }
+
   void mensApi() async {
     var mens = await CategoryTypeServies().mensApi();
 

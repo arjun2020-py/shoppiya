@@ -7,6 +7,7 @@ import '../../../../../utils/helper/shopping_helper.dart';
 import '../../../../utils/custom_widget/custom_back_button.dart';
 import '../compoents/women_list_view_widget.dart';
 import '../controller/womens_controller.dart';
+import 'deatiled_women_screen.dart';
 
 class WomensScreen extends StatelessWidget {
   WomensScreen({super.key});
@@ -31,9 +32,14 @@ class WomensScreen extends StatelessWidget {
                       itemCount: womenController.womensList.length,
                       itemBuilder: (BuildContext context, int index) {
                         var data = womenController.womensList[index];
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: WomenListViewWidget(data: data),
+                        return InkWell(
+                          onTap: () {
+                            Get.to(DetailedWomenScreen(womensController: womenController,index: index,));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: WomenListViewWidget(data: data),
+                          ),
                         );
                       },
                     ),

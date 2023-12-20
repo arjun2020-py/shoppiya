@@ -13,6 +13,16 @@ class JeweleryControler extends GetxController {
     super.onInit();
   }
 
+  var count = 0.obs;
+
+  void addItems() {
+    count.value += 1;
+  }
+
+  void removeItem() {
+    count.value -= 1;
+  }
+
   var isLoding = true.obs;
 
   var jeweleryList = RxList<ApiResponseJeweleryModel>();
@@ -24,7 +34,7 @@ class JeweleryControler extends GetxController {
       log('-----------------c2');
 
       isLoding(true);
-      if (jewelery !=null ) {
+      if (jewelery != null) {
         log('-----------------c3');
 
         jeweleryList.value = jewelery;

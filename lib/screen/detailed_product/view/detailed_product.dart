@@ -55,10 +55,13 @@ class DetailedProductScreen extends StatelessWidget {
                   SizedBox(
                     width: 20,
                   ),
-                  CustomTextWidget(
-                      fontSize: 13,
-                      // fontWeight: FontWeight.w500,
-                      text: homeController.featureProduct[index].title),
+                  Flexible(
+                    flex: 1,
+                    child: CustomTextWidget(
+                        fontSize: 15,
+                        // fontWeight: FontWeight.w500,
+                        text: homeController.featureProduct[index].title),
+                  ),
                 ],
               ),
               SizedBox(
@@ -133,7 +136,6 @@ class DetailedProductScreen extends StatelessWidget {
                   addRemoveItemWidget(
                       onPressed: () {
                         detailedProductController.addItemCount();
-                        
                       },
                       icon: Icons.add,
                       detailedProductController: detailedProductController),

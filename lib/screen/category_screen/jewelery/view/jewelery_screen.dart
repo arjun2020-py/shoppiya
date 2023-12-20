@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shoppiya/screen/category_screen/jewelery/model/jewelery_model.dart';
+import 'package:shoppiya/screen/category_screen/jewelery/view/deatiled_jewelery_screen.dart';
 import 'package:shoppiya/utils/custom_widget/home_search.dart';
 import 'package:shoppiya/utils/helper/shopping_helper.dart';
 import 'package:shoppiya/utils/shopping_color/shopping_color.dart';
@@ -35,9 +36,16 @@ class JeweleryScreen extends StatelessWidget {
                           var data = jeweleryController.jeweleryList[index];
 
                           print('title == ${data.title}');
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CustomJeweryCard(data: data),
+                          return InkWell(
+                            onTap: () {
+                              Get.to(DetailedJeweleryScreen(
+                                  jeweleryControler: jeweleryController,
+                                  index: index));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CustomJeweryCard(data: data),
+                            ),
                           );
                         },
                       ),
@@ -47,5 +55,3 @@ class JeweleryScreen extends StatelessWidget {
         ));
   }
 }
-
-

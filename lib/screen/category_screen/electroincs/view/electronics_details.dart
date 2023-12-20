@@ -5,6 +5,8 @@ import '../../../../utils/custom_widget/custom_elev_butt_widget.dart';
 import '../../../../utils/interlization/inerlization.dart';
 import '../../../../utils/shopping_color/shopping_color.dart';
 import '../../../auth/compoents/custom_text_widget.dart';
+import '../compoents/custom_add_remove_widget.dart';
+import '../compoents/custom_price_widget.dart';
 import '../controller/category_controller.dart';
 
 class DetailedElectronicsScreen extends StatelessWidget {
@@ -52,10 +54,14 @@ class DetailedElectronicsScreen extends StatelessWidget {
                   SizedBox(
                     width: 20,
                   ),
-                  CustomTextWidget(
-                      fontSize: 11,
-                      // fontWeight: FontWeight.w500,
-                      text: electronicsController.electronicsList[index].title),
+                  Flexible(
+                    flex: 1,
+                    child: CustomTextWidget(
+                        fontSize: 14,
+                        // fontWeight: FontWeight.w500,
+                        text:
+                            electronicsController.electronicsList[index].title),
+                  ),
                 ],
               ),
               SizedBox(
@@ -67,14 +73,14 @@ class DetailedElectronicsScreen extends StatelessWidget {
                     width: 18,
                   ),
                   CustomTextWidget(
-                      fontSize: 12,
+                      fontSize: 14,
                       //  fontWeight: FontWeight.w400,
                       text: LocalName.reviwers.tr),
                   SizedBox(
                     width: 5,
                   ),
                   CustomTextWidget(
-                      fontSize: 12,
+                      fontSize: 14,
                       //  fontWeight: FontWeight.w400,
                       text: electronicsController
                           .electronicsList[index].rating.rate
@@ -83,17 +89,17 @@ class DetailedElectronicsScreen extends StatelessWidget {
                     width: 5,
                   ),
                   CustomTextWidget(
-                      fontSize: 12,
+                      fontSize: 14,
                       //  fontWeight: FontWeight.w400,
                       text: '('),
                   CustomTextWidget(
-                      fontSize: 12,
+                      fontSize: 14,
                       //   fontWeight: FontWeight.w400,
                       text: electronicsController
                           .electronicsList[index].rating.count
                           .toString()),
                   CustomTextWidget(
-                      fontSize: 12,
+                      fontSize: 14,
                       //fontWeight: FontWeight.w400,
                       text: ')')
                 ],
@@ -105,6 +111,13 @@ class DetailedElectronicsScreen extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: 15,
+                  ),
+                  AddRemoveElectronicsmWidget(
+                    electronicsController: electronicsController,
+                    icon: Icons.add,
+                    onPressed: () {
+                      electronicsController.addItemCount();
+                    },
                   ),
                   Container(
                     color: Colors.white,
@@ -122,6 +135,18 @@ class DetailedElectronicsScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  AddRemoveElectronicsmWidget(
+                    electronicsController: electronicsController,
+                    icon: Icons.remove,
+                    onPressed: () {
+                      electronicsController.removeItemCount();
+                    },
+                  ),
+                  Spacer(),
+                  CustomElectronicsPriceWidget(
+                    electronicsController: electronicsController,
+                    index: index,
+                  )
                 ],
               ),
               SizedBox(
