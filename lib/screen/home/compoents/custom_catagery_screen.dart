@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
 import 'package:shoppiya/screen/category_screen/jewelery/view/jewelery_screen.dart';
-import 'package:shoppiya/screen/category_screen/mens/mens_screen.dart';
-import 'package:shoppiya/screen/category_screen/womens_screen.dart';
+import 'package:shoppiya/screen/category_screen/mens/view/mens_screen.dart';
+import 'package:shoppiya/screen/category_screen/womens/view/womens_screen.dart';
 import 'package:shoppiya/screen/home/controller/home_controller.dart';
 import 'package:shoppiya/utils/shopping_router/shopping_router.dart';
 

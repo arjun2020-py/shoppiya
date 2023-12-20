@@ -6,9 +6,9 @@ import 'package:shoppiya/utils/custom_widget/home_search.dart';
 import 'package:shoppiya/utils/helper/shopping_helper.dart';
 import 'package:shoppiya/utils/shopping_color/shopping_color.dart';
 
+import '../../../../utils/custom_widget/custom_back_button.dart';
 import '../../../home/model/category_list_model.dart';
-import '../../compoents/custom_list_view_widget.dart';
-import '../../compoents/custom_back_button.dart';
+import '../compoents/custom_list_view_widget.dart';
 import '../controller/category_controller.dart';
 
 class ElectronicsScreen extends StatelessWidget {

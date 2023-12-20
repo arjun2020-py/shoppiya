@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:http/http.dart' as http;
 
 import '../electroincs/model/electronics_model.dart';
@@ -18,10 +20,13 @@ class CategoryTypeServies {
   }
 
   Future<List<ApiResponseJeweleryModel>?> jeweleryApi() async {
+    log('----------------r1');
     final response = await http
         .get(Uri.parse('https://fakestoreapi.com/products/category/jewelery'));
 
     if (response.statusCode == 200) {
+          log('----------------r2');
+
       final jsonString = response.body;
       return apiResponseJeweleryModelFromJson(jsonString);
     } else {

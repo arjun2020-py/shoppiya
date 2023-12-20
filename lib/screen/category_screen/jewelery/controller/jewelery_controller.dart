@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,15 +15,21 @@ class JeweleryControler extends GetxController {
 
   var isLoding = true.obs;
 
-  final RxList<ApiResponseJeweleryModel> jeweleryList =
-      <ApiResponseJeweleryModel>[].obs;
+  var jeweleryList = RxList<ApiResponseJeweleryModel>();
 
   void jeweleryApi() async {
-    var jewelery = CategoryTypeServies().jeweleryApi();
+    log('-----------------c1');
+    var jewelery = await CategoryTypeServies().jeweleryApi();
     try {
+      log('-----------------c2');
+
       isLoding(true);
-      if (jewelery != null) {
-        jeweleryList.value = jewelery as List<ApiResponseJeweleryModel>;
+      if (jewelery !=null ) {
+        log('-----------------c3');
+
+        jeweleryList.value = jewelery;
+
+        log('---------------------c4');
       }
       isLoding(false);
     } on Exception catch (e) {
