@@ -8,6 +8,7 @@ class ShoppingColor {
   Color appNameColor = Color(0xffffde14);
   Color loginBgColor = Color(0xff6eb1e3);
   Color buttonColor = Color(0xffdf342f);
+  Color blueColor = Colors.blue;
   Color blackColor = Colors.black;
   Color whiteColor = Colors.white;
   Color transprentColor = Colors.transparent;

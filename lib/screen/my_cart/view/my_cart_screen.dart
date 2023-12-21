@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shoppiya/screen/auth/compoents/custom_text_widget.dart';
 import 'package:shoppiya/utils/custom_widget/custom_back_button.dart';
+import 'package:shoppiya/utils/custom_widget/custom_elev_butt_widget.dart';
 import 'package:shoppiya/utils/helper/shopping_helper.dart';
 import 'package:shoppiya/utils/interlization/inerlization.dart';
 import 'package:shoppiya/utils/shopping_color/shopping_color.dart';
@@ -30,48 +31,67 @@ class MyCartScreen extends StatelessWidget {
           HoroztalSizedBox(10)
         ],
       ),
-      body: ListView.separated(
-        itemCount: 10,
-        separatorBuilder: (BuildContext context, int index) {
-          return Divider();
-        },
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            color: ShoppingColor().cutomCardColor,
-            child: Row(
-              children: [
-                Image.asset(
-                  'assets/images/electronics.png',
-                  height: 60,
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child:
-                          CustomTextWidget(text: 'product name', fontSize: 16),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 50),
-                      child: Row(
+      body: Stack(
+        children: [
+          ListView.separated(
+            itemCount: 10,
+            separatorBuilder: (BuildContext context, int index) {
+              return Divider(color: ShoppingColor().transprentColor);
+            },
+            itemBuilder: (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Card(
+                  color: ShoppingColor().cutomCardColor,
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/electronics.png',
+                        height: 60,
+                      ),
+                      Column(
                         children: [
-                          Icon(
-                            Icons.attach_money,
-                            size: 16,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: CustomTextWidget(
+                                text: 'product name', fontSize: 16),
                           ),
-                          CustomTextWidget(text: '5.90', fontSize: 15)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 50),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.attach_money,
+                                  size: 16,
+                                ),
+                                CustomTextWidget(text: '5.90', fontSize: 15)
+                              ],
+                            ),
+                          ),
                         ],
                       ),
-                    ),
-                  ],
+                      Spacer(),
+                      IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
+                      HoroztalSizedBox(10)
+                    ],
+                  ),
                 ),
-                Spacer(),
-                IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
-                HoroztalSizedBox(10)
-              ],
-            ),
-          );
-        },
+              );
+            },
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: CustomElevButton(
+                text: LocalName.proceedToCheckout.tr,
+                fontSize: 15,
+                onpressed: () {},
+                textColor: ShoppingColor().whiteColor,
+                buttonBgColor: ShoppingColor().blueColor,
+                buttonRadius: 15,
+                sizedBoxWidth: 0.8,
+                sizedBoxHieght: 0.15),
+          ),
+        ],
       ),
     );
   }

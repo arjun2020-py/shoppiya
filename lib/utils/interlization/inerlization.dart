@@ -25,7 +25,8 @@ class Interlization extends Translations {
           LocalName.addToCart: "add To Cart",
           LocalName.buyNow: "buy Now",
           LocalName.decrption: "Decrption",
-          LocalName.myCart: "My Cart"
+          LocalName.myCart: "My Cart",
+          LocalName.proceedToCheckout : "Proceed To Checkout"
         }
       };
 }
@@ -54,4 +55,5 @@ class LocalName {
   static String buyNow = 'buyNow';
   static String decrption = 'decrption';
   static String myCart = 'my_cart';
+  static String proceedToCheckout = 'proceed_to_checkout';
 }
