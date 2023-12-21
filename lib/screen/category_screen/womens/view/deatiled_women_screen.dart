@@ -3,14 +3,11 @@ import 'package:get/get.dart';
 import 'package:shoppiya/screen/category_screen/womens/compoents/women_add_remove_widet.dart';
 import 'package:shoppiya/screen/category_screen/womens/compoents/women_price_widget.dart';
 import 'package:shoppiya/screen/category_screen/womens/controller/womens_controller.dart';
-import 'package:shoppiya/screen/detailed_product/compoents/custom_price_widget.dart';
 
 import '../../../../utils/custom_widget/custom_elev_butt_widget.dart';
 import '../../../../utils/interlization/inerlization.dart';
 import '../../../../utils/shopping_color/shopping_color.dart';
 import '../../../auth/compoents/custom_text_widget.dart';
-import '../../jewelery/compoents/jewelery_add_remove.dart';
-import '../../mens/compoents/mens_price_widget.dart';
 
 class DetailedWomenScreen extends StatelessWidget {
   DetailedWomenScreen({
@@ -29,6 +26,7 @@ class DetailedWomenScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: IconButton(
             onPressed: () {
+              
               Get.back();
             },
             icon: Icon(Icons.arrow_back_ios)),

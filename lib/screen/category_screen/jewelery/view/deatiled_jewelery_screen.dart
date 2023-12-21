@@ -112,7 +112,9 @@ class DetailedJeweleryScreen extends StatelessWidget {
                   AddRemoveJewerlyWidget(
                     icon: Icons.add,
                     jeweleryControler: jeweleryControler,
-                    onPressed: () {},
+                    onPressed: () {
+                      jeweleryControler.addItems();
+                    },
                   ),
                   Container(
                     color: Colors.white,
@@ -132,7 +134,9 @@ class DetailedJeweleryScreen extends StatelessWidget {
                   AddRemoveJewerlyWidget(
                     jeweleryControler: jeweleryControler,
                     icon: Icons.remove,
-                    onPressed: () {},
+                    onPressed: () {
+                      jeweleryControler.removeItem();
+                    },
                   ),
                   Spacer(),
                   CustomJewerlyPriceWidget(
@@ -186,8 +190,7 @@ class DetailedJeweleryScreen extends StatelessWidget {
                     fontSize: 16,
                     //   fontWeight: FontWeight.w300,
                     textAlign: TextAlign.justify,
-                    text: jeweleryControler
-                        .jeweleryList[index].description),
+                    text: jeweleryControler.jeweleryList[index].description),
               )
             ],
           ),

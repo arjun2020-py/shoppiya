@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../../utils/custom_widget/custom_elev_butt_widget.dart';
 import '../../../../utils/helper/shopping_helper.dart';
+import '../../../../utils/interlization/inerlization.dart';
 import '../../../../utils/shopping_color/shopping_color.dart';
 import '../../../auth/compoents/custom_text_widget.dart';
 import '../model/women_model.dart';
@@ -33,8 +36,7 @@ class WomenListViewWidget extends StatelessWidget {
             padding: const EdgeInsets.only(right: 260),
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(15)),
+                  color: Colors.green, borderRadius: BorderRadius.circular(15)),
               width: 50,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -62,8 +64,17 @@ class WomenListViewWidget extends StatelessWidget {
                   Icons.currency_rupee,
                   size: 20,
                 ),
-                CustomTextWidget(
-                    text: data.price.toString(), fontSize: 15)
+                CustomTextWidget(text: data.price.toString(), fontSize: 15),
+                Spacer(),
+                CustomElevButton(
+                    text: LocalName.addToCart.tr,
+                    onpressed: () {},
+                    textColor: Colors.white,
+                    buttonBgColor: ShoppingColor().buttonColor,
+                    buttonRadius: 15,
+                    sizedBoxWidth: 0.4,
+                    sizedBoxHieght: 0.15),
+                VerticalSizedBox(10)
               ],
             ),
           ),
