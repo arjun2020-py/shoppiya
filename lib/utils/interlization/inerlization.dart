@@ -2,7 +2,6 @@ import 'package:get/route_manager.dart';
 
 class Interlization extends Translations {
   @override
-  // TODO: implement keys
   Map<String, Map<String, String>> get keys => {
         'en_US': {
           LocalName.shoppiya: 'Shoppiya',
@@ -20,12 +19,13 @@ class Interlization extends Translations {
           LocalName.jewelery: 'Jewelery',
           LocalName.mensClothing: 'men\'s',
           LocalName.womenClothing: 'women\'s',
-          LocalName.features: "Featured",
+          LocalName.features: "Featured Product",
           LocalName.searchProduct: "Search Product",
           LocalName.reviwers: "Reviwers",
           LocalName.addToCart: "add To Cart",
-          LocalName.buyNow: "buyNow",
-          LocalName.decrption : "Decrption"
+          LocalName.buyNow: "buy Now",
+          LocalName.decrption: "Decrption",
+          LocalName.myCart: "My Cart"
         }
       };
 }
@@ -47,10 +47,11 @@ class LocalName {
   static String jewelery = 'jewelery';
   static String mensClothing = 'men\'s clothing';
   static String womenClothing = 'women\'s clothing';
-  static String features = 'features';
+  static String features = 'features_product';
   static String searchProduct = 'serach_product';
   static String reviwers = 'reviwers';
   static String addToCart = 'addToCart';
   static String buyNow = 'buyNow';
   static String decrption = 'decrption';
+  static String myCart = 'my_cart';
 }

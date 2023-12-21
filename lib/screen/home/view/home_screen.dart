@@ -40,14 +40,15 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 220),
+                padding: const EdgeInsets.only(
+                  right: 180,
+                ),
                 child: CustomTextWidget(
                     fontSize: 20,
                     //     fontWeight: FontWeight.w500,
                     text: LocalName.features.tr),
               ),
               CustomFeatureProduct(homeController: homeController),
-              
             ],
           ),
         ));

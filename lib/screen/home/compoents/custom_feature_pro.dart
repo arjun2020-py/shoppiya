@@ -32,13 +32,12 @@ class CustomFeatureProduct extends StatelessWidget {
                     },
                     child: SizedBox(
                       // height: MediaQuery.sizeOf(context).height * 0.5,
-                      width: MediaQuery.sizeOf(context).width * 0.9,
+                      width: MediaQuery.sizeOf(context).width * 0.95,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
                             color: ShoppingColor().cutomCardColor,
-                            child: 
-                            Column(
+                            child: Column(
                               children: [
                                 Stack(
                                   children: [

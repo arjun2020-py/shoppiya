@@ -6,6 +6,7 @@ import 'package:shoppiya/utils/shopping_color/shopping_color.dart';
 import '../../../utils/custom_widget/custom_elev_butt_widget.dart';
 import '../../../utils/interlization/inerlization.dart';
 import '../../auth/compoents/custom_text_widget.dart';
+import '../../my_cart/view/my_cart_screen.dart';
 import '../compoents/custom_add_remove_widget.dart';
 import '../compoents/custom_price_widget.dart';
 import '../controller/detailed_product.dart';
@@ -156,7 +157,9 @@ class DetailedProductScreen extends StatelessWidget {
                   ),
                   CustomElevButton(
                       text: LocalName.addToCart.tr,
-                      onpressed: () {},
+                      onpressed: () {
+                        Get.to(MyCartScreen());
+                      },
                       textColor: Colors.white,
                       buttonBgColor: ShoppingColor().buttonColor,
                       buttonRadius: 18,
